@@ -2,7 +2,11 @@
 
 import { useState } from 'react'
 import React from 'react'
-import EditorComponent from '@/components/EditorComponent'
+import dynamic from 'next/dynamic';
+
+const EditorComponent = dynamic(() => import('@/components/EditorComponent'), {
+    ssr: false,
+  });
 
 
 const AddArticle = ({title}) => {
@@ -30,8 +34,8 @@ const AddArticle = ({title}) => {
                         </div>
                         <div className='font-bold text-lg'>
                             <p className='text-white'>Select Category</p>
-                            <select className="select select-bordered w-full">
-                                <option disabled selected>Technology</option>
+                            <select  className="select select-bordered w-full">
+                                <option defaultValue={'Technology'}>Technology</option>
                                 <option>Front end</option>
                                 <option>Backend</option>
                             </select>

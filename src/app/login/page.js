@@ -37,8 +37,9 @@ const page = () => {
         }
     }, [])
     const reachGoogle = () => {
-        const clientID = "938703723181-sef8oe3hr7kda23vqjh71h4k4m7mfrt3.apps.googleusercontent.com"
-        const callBackURI = "http://localhost:3000/login/"
+        const clientID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+        const callBackURI = process.env.NEXT_PUBLIC_GOOGLE_CALLBACK_URI
+        
         window.location.replace(`https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${callBackURI}&prompt=consent&response_type=code&client_id=${clientID}&scope=openid%20email%20profile&access_type=offline`)
     }
   return (
