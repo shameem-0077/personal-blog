@@ -7,7 +7,7 @@ const page = () => {
     const router = useRouter()
 
     const addAccount = (code) => {
-        fetch('http://127.0.0.1:8002/api/v1/users/dj-rest-auth/google/', {
+        fetch('https://futurbro.in.net/api/v1/users/dj-rest-auth/google/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
